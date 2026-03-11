@@ -1,22 +1,17 @@
-# mention-tool
-app for capturing mentions
+# How to use the app:
 
-## Getting Started
-Now that you have generated a blank default Rocket.Chat App, what are you supposed to do next?
-Start developing! Open up your favorite editor, our recommended one is Visual Studio code,
-and start working on your App. Once you have something ready to test, you can either
-package it up and manually deploy it to your test instance or you can use the CLI to do so.
-Here are some commands to get started:
-- `rc-apps package`: this command will generate a packaged app file (zip) which can be installed **if** it compiles with TypeScript
-- `rc-apps deploy`: this will do what `package` does but will then ask you for your server url, username, and password to deploy it for you
+## steps: initialise your bot 
 
-## Documentation
-Here are some links to examples and documentation:
-- [Rocket.Chat Apps TypeScript Definitions Documentation](https://rocketchat.github.io/Rocket.Chat.Apps-engine/)
-- [Rocket.Chat Apps TypeScript Definitions Repository](https://github.com/RocketChat/Rocket.Chat.Apps-engine)
-- [Example Rocket.Chat Apps](https://github.com/graywolf336/RocketChatApps)
-- Community Forums
-  - [App Requests](https://forums.rocket.chat/c/rocket-chat-apps/requests)
-  - [App Guides](https://forums.rocket.chat/c/rocket-chat-apps/guides)
-  - [Top View of Both Categories](https://forums.rocket.chat/c/rocket-chat-apps)
-- [#rocketchat-apps on Open.Rocket.Chat](https://open.rocket.chat/channel/rocketchat-apps)
+- go over to src/commands/ToggleCommand.ts, you should see kaustubh2k5 , change it to whatever you like.ensure no caps and special character.
+- go over to MentionToolApp.ts and set the @kaustubh.sardesai to any username of your choice.
+- next run rc-apps package command before that ensure that the rc apps cli is installed (go over to https://developer.rocket.chat/docs/getting-started-with-apps-engine) .
+- you'll see a zip under dist dir, next uploaded this in you local server or check the documentations to deploy your app, once you do that go over to adding apps.
+- for local server (what i did) upload the zip and install under private app.
+- under settings add your endpoint link (for testing you can use the webhooks site)
+- voila! you now have setup your very own mention bot.
+
+## using it :
+
+- add the bot to your chat
+- use /<username set in togglecommand> on ,to turn it on you can also use off to shut it down
+- now every message mentioned @<username set in MentionToolApp> will be captured and sent to the endpoint
